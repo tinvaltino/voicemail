@@ -43,11 +43,11 @@ describe Voicemail::MailboxPlayMessageController do
     end
   end
 
-  describe "#intro_message" do
-    it "plays the message introduction" do
+  describe "#play_message_details" do
+    it "plays the message details" do
       subject.should_receive(:current_message).once.and_return message
-      should_invoke Voicemail::MailboxPlayMessageIntroController, message: message, mailbox: 100, storage: storage_instance
-      controller.intro_message
+      should_invoke Voicemail::MailboxPlayMessageDetailsController, message: message, mailbox: 100, storage: storage_instance
+      controller.play_message_details
     end
   end
 
