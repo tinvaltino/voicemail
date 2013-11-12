@@ -1,12 +1,12 @@
 module Voicemail
-  class MailboxPlayMessageIntroController < ApplicationController
+  class MailboxPlayMessageDetailsController < ApplicationController
 
     def run
       load_message
-      intro_message
+      play_message_details
     end
 
-    def intro_message
+    def play_message_details
       play_time_message
       play_from_message
     end
@@ -47,7 +47,7 @@ module Voicemail
 
     def load_message
       @message = metadata[:message] || nil
-      raise ArgumentError, "MailboxPlayMessageIntroController needs a valid message passed to it" unless @message
+      raise ArgumentError, "MailboxPlayMessageDetailsController needs a valid message passed to it" unless @message
     end
 
     def message_uri
