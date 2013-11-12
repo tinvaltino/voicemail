@@ -20,7 +20,7 @@ describe Voicemail::MailboxPlayMessageDetailsController do
   describe "#play_message_details" do
 
     before { subject.should_receive(:current_message).and_return message }
-    after { subject.intro_message }
+    after { subject.play_message_details }
 
     context "with the default mode" do
       it "plays the message details" do
