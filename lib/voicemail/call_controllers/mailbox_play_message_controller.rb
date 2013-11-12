@@ -11,8 +11,8 @@ module Voicemail
 
     def run
       load_message
-      intro_message
       play_message
+      play_message_details
     end
 
     def play_message
@@ -43,8 +43,8 @@ module Voicemail
       end
     end
 
-    def intro_message
-      invoke MailboxPlayMessageIntroController, message: current_message, mailbox: mailbox[:id], storage: storage
+    def play_message_details
+      invoke MailboxPlayMessageDetailsController, message: current_message, mailbox: mailbox[:id], storage: storage
     end
 
     def play_message_menu
